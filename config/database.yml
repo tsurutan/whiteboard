@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgres
+  database: whiteboard
+  username: whiteboard_user
+  password: <%= ENV['WHITEBOARD_DATABASE_PASSWORD'] %>
+  host: <%= ENV['WHITEBOARD_DATABASE_HOST'] %>
   pool: 5
   timeout: 5000
