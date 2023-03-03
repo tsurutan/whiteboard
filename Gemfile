@@ -7,6 +7,7 @@ gem 'unicorn'
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'github-markdown', :require => 'github/markdown'
+gem 'therubyracer'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -14,7 +15,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
-  gem 'capybara-webkit'
+  # gem 'capybara-webkit'
   gem 'launchy'
   gem 'sqlite3'
   gem 'database_cleaner'
@@ -23,9 +24,9 @@ group :test, :development do
 end
 
 group :development do
-  gem 'debugger'
-  gem 'heroku'
-  gem 'heroku_san'
+  # gem 'debugger'
+  # gem 'heroku'
+  # gem 'heroku_san'
 end
 
 group :assets do
