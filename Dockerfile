@@ -1,4 +1,6 @@
 FROM ruby:2.0.0-p647
+ARG WHITEBOARD_DATABASE_PASSWORD
+ARG WHITEBOARD_DATABASE_HOST
 COPY . ./whiteboard
 WORKDIR ./whiteboard
 RUN gem uninstall bundler
