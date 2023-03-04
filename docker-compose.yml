@@ -17,8 +17,6 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - .:/whiteboard/
-    ports:
-      - 3000:3000
     links:
       - "db:database.com"
     tty: true
@@ -28,5 +26,14 @@ services:
     command: sh -c "bundle exec rake db:migrate && bundle exec rails server"
     depends_on:
       - db
+  nginx:
+    image: nginx:1.23.3
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data/nginx:/etc/nginx/conf.d
+    links:
+      - "app:whiteboard.com"
 volumes:
   db-store:
