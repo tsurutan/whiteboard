@@ -6,6 +6,7 @@
 
 config/heroku.yml
 vendor/bundle
+public/assets
 
 # Ignore bundler config
 /.bundle
@@ -17,6 +18,6 @@ vendor/bundle
 /log/*.log
 /tmp
 .idea
-.env
+docker.env
 
 .DS_Store

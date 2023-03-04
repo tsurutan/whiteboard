@@ -1,12 +1,32 @@
 services:
+  db:
+    image: postgres:9.5
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - db-store:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=whiteboard_user
+      - POSTGRES_DB=whiteboard
+    env_file:
+      - docker.env
   app:
     build:
       context: .
       dockerfile: ./Dockerfile
-#    stdin_open: true
     volumes:
       - .:/whiteboard/
-#    tty: true
     ports:
       - 3000:3000
-#    command: bundle exec rails s
+    links:
+      - "db:database.com"
+    tty: true
+    stdin_open: true
+    env_file:
+      - docker.env
+    command: sh -c "bundle exec rake db:migrate && bundle exec rails server"
+    depends_on:
+      - db
+volumes:
+  db-store:

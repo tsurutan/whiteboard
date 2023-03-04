@@ -22,7 +22,7 @@ production:
   adapter: postgresql
   database: whiteboard
   username: whiteboard_user
-  password: <%= ENV['WHITEBOARD_DATABASE_PASSWORD'] %>
-  host: <%= ENV['WHITEBOARD_DATABASE_HOST'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: database.com
   pool: 5
   timeout: 5000
