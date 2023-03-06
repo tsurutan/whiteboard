@@ -23,7 +23,7 @@ services:
     stdin_open: true
     env_file:
       - docker.env
-    command: sh -c "bundle exec rake db:migrate && bundle exec rails server"
+    command: sh -c "bundle exec rake assets:precompile && bundle exec rake db:migrate && bundle exec unicorn -p 3000 -c ./config/unicorn.rb"
     depends_on:
       - db
   nginx:
