@@ -6,6 +6,6 @@ class PostMailer < ActionMailer::Base
     @standup_id = standup_id
     mail  :to => Array(addresses),
           :subject => post.title_for_email,
-          :from => "#{post.from} <noreply@pivotallabs.com>"
+          :from => ENV['SENDER_MAIL']
   end
 end
