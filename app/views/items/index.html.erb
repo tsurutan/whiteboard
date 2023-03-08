@@ -7,7 +7,7 @@
       <%=  form_tag "/standups/#{@standup.id}/posts", method: 'post', class: 'navbar-form pull-right' do %>
         <%= text_field_tag 'post[title]', nil, placeholder: "朝回のタイトルを入力してください" %>
         <%= submit_tag "内容をクリア",
-                       confirm: "内容をクリアしメールを送りますが大丈夫でしょうか？",
+                       confirm: "内容をクリアしメールを送りますがよろしいですか？",
                        id: 'create-post',
                        class: 'btn btn-primary'
         %>
