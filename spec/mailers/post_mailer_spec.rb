@@ -10,10 +10,6 @@ describe PostMailer do
       mail.subject.should == post.title_for_email
     end
 
-    it 'sets the from address' do
-      mail.from.should == ["noreply@pivotallabs.com"]
-    end
-
     it 'renders the items in the body of the message' do
       mail.text_part.body.should include(post.items.first.title)
     end

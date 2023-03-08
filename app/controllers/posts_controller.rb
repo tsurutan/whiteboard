@@ -5,9 +5,13 @@ class PostsController < ApplicationController
   def create
     @standup = Standup.find_by_id(params[:standup_id])
     @post = @standup.posts.build(params[:post])
+    @post.from = 'sample@gmail.com'
     if @post.save
       @post.adopt_all_the_items
-      redirect_to edit_post_path(@post)
+      @post.archived = true
+      @post.deliver_email
+      @post.save!
+      redirect_to @standup
     else
       flash[:error] = "Unable to create post"
       redirect_to @standup
