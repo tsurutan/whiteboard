@@ -5,7 +5,6 @@ gem 'rails', '3.2.11'
 gem 'pg'
 gem 'unicorn'
 gem 'jquery-rails'
-gem 'omniauth-google-oauth2'
 gem 'github-markdown', :require => 'github/markdown'
 gem 'therubyracer'
 
@@ -15,18 +14,11 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
-  # gem 'capybara-webkit'
   gem 'launchy'
   gem 'sqlite3'
   gem 'database_cleaner'
   gem 'pry'
   gem 'letter_opener'
-end
-
-group :development do
-  # gem 'debugger'
-  # gem 'heroku'
-  # gem 'heroku_san'
 end
 
 group :assets do
