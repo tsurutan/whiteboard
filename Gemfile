@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '4.0'
+# gem 'rails4_upgrade'
 
 gem 'pg'
 gem 'unicorn'
 gem 'jquery-rails'
 gem 'github-markdown', :require => 'github/markdown'
 gem 'therubyracer'
+gem 'nokogiri', '1.5.6'
+gem 'json', '2.0.0'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -15,7 +18,7 @@ group :test, :development do
   gem 'faker'
   gem 'capybara'
   gem 'launchy'
-  gem 'sqlite3'
+  # gem 'sqlite3'
   gem 'database_cleaner'
   gem 'pry'
   gem 'letter_opener'
@@ -23,8 +26,8 @@ end
 
 group :assets do
   gem 'compass-rails'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
 end
