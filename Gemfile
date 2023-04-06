@@ -1,24 +1,20 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0'
-# gem 'rails4_upgrade'
+gem 'rails', '4.2.8'
 
 gem 'pg'
 gem 'unicorn'
 gem 'jquery-rails'
-gem 'github-markdown', :require => 'github/markdown'
 gem 'therubyracer'
-gem 'nokogiri', '1.5.6'
-gem 'json', '2.0.0'
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'capybara'
   gem 'launchy'
-  # gem 'sqlite3'
+  gem 'sqlite3', '1.5.3'
   gem 'database_cleaner'
   gem 'pry'
   gem 'letter_opener'
@@ -32,6 +28,6 @@ group :assets do
   gem 'bootstrap-sass'
 end
 
-group :font_that_screws_up_capybara_webkit do
-  gem 'font-awesome-sass-rails'
-end
+# group :font_that_screws_up_capybara_webkit do
+#   gem 'font-awesome-sass-rails'
+# end
